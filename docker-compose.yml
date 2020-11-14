@@ -1,0 +1,16 @@
+version: '3'
+services:
+  hath:
+    image: bossman559/hath
+    container_name: HatH
+    ports:
+      - "${External_Port}:${Internal_Port}" # change to your port
+    environment:
+      - HATH_CLIENT_ID=${HATH_CLIENT_ID}
+      - HATH_CLIENT_KEY=${HATH_CLIENT_KEY}   
+      volumes:
+      - ./cache:/hath/cache
+      - ./data:/hath/data
+      - ./download:/hath/download
+      - ./log:/hath/log
+      - ./tmp:/hath/tmp
