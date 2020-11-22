@@ -3,6 +3,8 @@ services:
   hath:
     image: bossman559/hath
     container_name: HatH
+    env_file:
+      - envfile.env
     build: .    
     ports:
       - "${External_Port}:${Internal_Port}" # change to your port
